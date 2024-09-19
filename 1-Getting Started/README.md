@@ -27,10 +27,15 @@ public class Main{
 
 ![Image_1](../assets/1.png)
 
+> Like shown in the image 1, the compiler is the java kit we've installed to our machine
+
 ![Image_2](../assets/2.png)
 
-- we use package to group related classes
+> Java programs are plateforms independt, which mean it can be run in any plateforce, thanks to java virtual envinronement
 
-- we originze classes into packages
+**Summary** :
+after compiling a java program we get a class file that can be running on any plateform.
+
+anotehr thing mentioned in this sections, is packages, a `package` is a container for related classes, we orgiznie classes into packages
 
 > As convention, in java the base package should be your domain in reverse
