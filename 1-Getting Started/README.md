@@ -1,5 +1,10 @@
 # Getting Started
 
+## Table Of Content
+
+- [Anatomy of Java](#anatomy-of-java)
+- [How Java Code Gets Executed](#how-java-code-gets-executed)
+
 ## Anatomy of Java
 
 Every java is build from blocks of functions contained by a class that must have the same name of the file, we call those functions by methods, a `method` is a function exists inside a class.
@@ -17,6 +22,13 @@ public class Main{
     }
 }
 ```
+
+## How Java Code Gets Executed
+
+![Image_1](../assets/1.png)
+<img src="../assets/1.png" width="30">
+<img src="../assets/2.png" width="30">
+![Image_2](../assets/2.png)
 
 - we use package to group related classes
 
