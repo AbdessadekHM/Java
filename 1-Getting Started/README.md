@@ -26,8 +26,8 @@ public class Main{
 ## How Java Code Gets Executed
 
 ![Image_1](../assets/1.png)
-<img src="../assets/1.png" width="30">
-<img src="../assets/2.png" width="30">
+<img src="../assets/1.png" width="300">
+<img src="../assets/2.png" width="300">
 ![Image_2](../assets/2.png)
 
 - we use package to group related classes
