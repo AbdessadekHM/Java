@@ -87,3 +87,40 @@ public class Main {
     }
 
 ```
+
+## Strings
+
+**String** is a _reference type_
+
+> Strings are immutable, when calling a method like replace, it doesn't update the value of the string, but create another refernece with new value
+
+```java
+package org.example;
+
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+        //using Date class
+        String message = "Hello World" + "!!";
+        System.out.println(message.endsWith("!!"));
+        System.out.println(message.startsWith("!!"));
+        System.out.println(message.indexOf("h"));
+        System.out.println(message.replace("!!","**"));
+        System.out.println(message.toLowerCase());
+        System.out.println(message.trim()); // it removes spaces in the beginning and the end of the string
+        }
+    }
+
+```
+
+```Output
+true
+false
+-1
+Hello World**
+hello world!!
+Hello World!!
+
+```
