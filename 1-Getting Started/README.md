@@ -4,6 +4,7 @@
 
 - [Anatomy of Java](#anatomy-of-java)
 - [How Java Code Gets Executed](#how-java-code-gets-executed)
+- [5 Interseting Facts About Java](#5-intersting-facts-fbout-java)
 
 ## Anatomy of Java
 
@@ -39,3 +40,17 @@ after compiling a java program we get a class file that can be running on any pl
 anotehr thing mentioned in this sections, is packages, a `package` is a container for related classes, we orgiznie classes into packages
 
 > As convention, in java the base package should be your domain in reverse
+
+## 5 Intersting Facts Fbout Java
+
+1. Java was developed by James Gosling in 1995
+2. Java have four editions:
+
+   - Standart Edition(SE): which is the basic edition
+   - Entreprise Edition(EE): which more advanced and oriented for large sclae distibuted applications, and it's built on SE
+   - Micro Edition(ME): which orinted for mobiles applications
+   - Java Card: which used in small carts!!
+
+3. Java has many versions
+4. billtions of phones and devices runs java
+5. Java Chances
