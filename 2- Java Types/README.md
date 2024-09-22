@@ -246,3 +246,54 @@ Constants are variables that we can't change their value throught the program.
 ```java
 final float PI = 3.14F;
 ```
+
+## Arithmetic Operations:
+
+Java has same arithmetic operations of many other programming language like C, C++, Python, JavaScript..., like(+,-,\*,/,%)
+
+**Example:**
+
+```java
+package org.example;
+
+
+import java.util.Arrays;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+        int result = 10/3;
+        double realResult = (double) 10/ (double) 3;
+        double testResult = 10/3;
+
+        System.out.println(result);
+        System.out.println(realResult);
+        System.out.println(testResult);
+        int x = 1;
+        x +=2;
+        x++;
+        ++x;
+        int y = ++x;
+        int z = x++;
+        System.out.println("this about incrementing ");
+        System.out.println(x);
+        System.out.println(y);
+        System.out.println(z);
+        }
+    }
+
+```
+
+**Output**
+
+```
+3
+3.3333333333333335
+3.0
+this about incrementing
+7
+6
+6
+
+```
