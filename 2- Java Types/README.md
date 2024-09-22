@@ -330,3 +330,58 @@ public class Main {
         }
     }
 ```
+
+## Math
+
+Math in java is an object containing many useful methods like :
+
+- round
+- ceil
+- floor
+- min
+- max
+- random
+
+<br>
+
+**Example:**
+
+```java
+package org.example;
+
+
+import java.util.Arrays;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+        int x = Math.round(1.1F);
+        System.out.println(x);
+        double y = Math.floor(1.1);
+        double z = Math.ceil(1.1);
+        System.out.println(y);
+        System.out.println(z);
+
+        x = Math.max(1,5);
+        System.out.println(x);
+        //Playing with random
+
+        double random = Math.random()*100;
+        System.out.println(random);
+        int randomInt = (int) (Math.random() * 100);
+        System.out.println(randomInt);
+        }
+    }
+```
+
+**Output:**
+
+```
+1
+1.0
+2.0
+5
+70.98026632802153
+38
+```
