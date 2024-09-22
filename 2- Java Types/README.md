@@ -385,3 +385,39 @@ public class Main {
 70.98026632802153
 38
 ```
+
+## Formating Numbers:
+
+Sometimes we need to format a number to a specific format, so in java we have a special class _NumberFormt_ which an abstract class, so we can't create a direct instance.
+
+**Example:**
+
+```java
+package org.example;
+
+
+import java.text.NumberFormat;
+import java.util.Arrays;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
+        String result = currency.format(1234321.3);
+        System.out.println(result);
+
+        result = NumberFormat.getPercentInstance().format(0.1); // here we introduced also method chaining
+        System.out.println(result);
+
+        }
+    }
+
+```
+
+**Output:**
+
+```
+$1,234,321.30
+10%
+```
