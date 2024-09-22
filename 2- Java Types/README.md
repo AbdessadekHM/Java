@@ -1,6 +1,17 @@
-# Java Types
 
-## Table of Content
+- [Variables:](#variables)
+- [Primitve Types:](#primitve-types)
+- [Reference Types](#reference-types)
+- [Strings](#strings)
+- [Escape Sequences:](#escape-sequences)
+- [Array](#array)
+- [Multi-dimensional arrays:](#multi-dimensional-arrays)
+- [Constants](#constants)
+- [Arithmetic Operations:](#arithmetic-operations)
+- [Casting](#casting)
+- [Math](#math)
+- [Formating Numbers:](#formating-numbers)
+
 
 ## Variables:
 
