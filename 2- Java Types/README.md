@@ -124,3 +124,125 @@ hello world!!
 Hello World!!
 
 ```
+
+## Escape Sequences:
+
+In Java there is some special characters we can't type them direclty in a string like " or \
+
+```java
+package org.example;
+
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+        //using Date class
+        String message = "Hello \"world\" \nhello \t world \\";
+        System.out.println(message);
+        }
+    }
+```
+
+```Output
+Hello "world"
+hello   world \
+```
+
+## Array
+
+Array it's a reference type, it conains multiple values of the same type.
+
+> Arrays in Java have fixed size, to get the size we use method length from _Arrays_ class.
+
+**Syntaxe:**
+
+```
+type[] name = new type[size];
+type[] name = {...values};
+```
+
+**Example:**
+
+```java
+package org.example;
+
+
+import java.util.Arrays;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+        //using Date class
+        int[] numbers = new int[5];
+        int[] odds = {1,3,5,7,9};
+        numbers[0] = 4;
+        numbers[3] = 8;
+        System.out.println(Arrays.toString(odds));
+        System.out.println(odds); // it prints the Reference id of the array
+        System.out.println(Arrays.toString(numbers));
+        System.out.println(numbers); // it prints the Reference id of the array
+        }
+    }
+
+```
+
+```Output
+[1, 3, 5, 7, 9]
+[I@341b80b2
+[4, 0, 0, 8, 0]
+[I@55a1c291
+```
+
+## Multi-dimensional arrays:
+
+In last section we define a one dimensional array, but in facts we can have multi-dimensional array, like matrix, tensors etc...
+
+**Example**:
+
+```java
+package org.example;
+
+
+import java.util.Arrays;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+        //using Date class
+        int[][] numbers = new int[2][3];
+        int [][] odds = {{1,2,5},{7,9,11}};
+
+        numbers[1][0] = 1;
+        numbers[1][1] = 2;
+        numbers[1][2] = 3;
+
+        odds[0][2] = 3;
+        System.out.println(numbers);
+        System.out.println(Arrays.toString(numbers)); // it convert just the array that contains those arrays
+        System.out.println(Arrays.deepToString(numbers)); // we use this method to convert all nested arrays to string
+        System.out.println(Arrays.deepToString(odds));
+
+        }
+    }
+
+```
+
+```Output
+[[I@3b938003
+[[I@6f3b5d16, [I@78b1cc93]
+[[0, 0, 0], [1, 2, 3]]
+[[1, 2, 3], [7, 9, 11]]
+```
+
+## Constants
+
+Constants are variables that we can't change their value throught the program.
+
+**Syntaxe:**
+
+```java
+final float PI = 3.14F;
+```
