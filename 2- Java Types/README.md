@@ -297,3 +297,36 @@ this about incrementing
 6
 
 ```
+
+## Casting
+
+There is two types of casting:
+
+- Implicite Casting: while casting is done automatically
+- Excplicite Casting: while casting is done in a manuall way
+
+**Example**:
+
+```java
+package org.example;
+
+
+import java.util.Arrays;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+        //Implicit Casting
+        short a = 3;
+        int b = a + 2;
+        //Explicit Casting
+        double x = 1.1;
+        String z = "1";
+        String w = "1.1";
+        int y = (int) x + 2;
+        y = Integer.parseInt(z) + (int)Double.parseDouble(w);
+
+        }
+    }
+```
