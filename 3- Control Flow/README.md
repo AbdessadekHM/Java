@@ -145,5 +145,17 @@ do {
     System.out.println(input);
 }while(!input.equals("quit"));
 ```
+## Break and Continue
+- `break` statement is used to break a loop 
+- `continue` statement is used to skip an instance of a loop
 
+**Syntaxe:**
 
+```java
+while(true){
+    //instructions + condition
+    continue;
+    //condition
+    break;
+}
+```
