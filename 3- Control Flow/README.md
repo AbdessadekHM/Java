@@ -159,3 +159,21 @@ while(true){
     break;
 }
 ```
+## For Each Loop
+
+**Syntaxe:**
+
+```java
+for (type name: array_name) { //in the name variable, it will be stored one array_name item per iteration
+    //instructions
+}
+```
+
+**Example:**
+
+```java
+String[] fruits = {"Apple", "Banana", "Orange", "Strawberry"};
+
+for(String fruit : fruits)
+    System.out.println(fruit);
+```
