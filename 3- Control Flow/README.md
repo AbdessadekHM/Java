@@ -44,4 +44,40 @@ if (condition)
 else 
     //instruction
 ```
+## Simplifying the If Statement:
 
+we can also return a false or true from a condition without if statements
+
+**Example:**
+```java
+int Income = 5000;
+boolean hasHighIncome = (Income > 4000); //true
+```
+
+## The Ternary Operator:
+the `Ternary` Operator is come to simplify the if statement and add syntaxe sugar.
+
+**Syntaxe:**
+```java
+int age = 6;
+String classroom = age < 6 ? "First" : "Second"; //Second 
+```
+## Switch Statements:
+Switch has the same base as if statements.
+
+**Syntaxe:**
+
+```java
+switch (variable){
+    case value_1:
+        //instructions
+        break;
+    case value_2:
+        //instructions
+        break;
+    default:
+        //instructions
+
+}
+```
+> It's important to use break statement in cases, because java one it found the right case it continue execute other cases even if they are false.
