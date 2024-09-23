@@ -81,3 +81,17 @@ switch (variable){
 }
 ```
 > It's important to use break statement in cases, because java one it found the right case it continue execute other cases even if they are false.
+
+## For Loops:
+
+**Syntaxe:**
+
+```java
+for (int i = 0; i < 5; i++){
+    //instuctions
+}
+```
+
+> As we mentioned before in if statements, when having one instruction we have the choice to remove {}
+
+
