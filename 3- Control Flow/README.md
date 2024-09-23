@@ -1,3 +1,17 @@
+
+- [3- Control Flow](#3--control-flow)
+  - [Comparison Opeartors](#comparison-opeartors)
+  - [Logical Operator:](#logical-operator)
+  - [If Statements:](#if-statements)
+  - [Simplifying the If Statement:](#simplifying-the-if-statement)
+  - [The Ternary Operator:](#the-ternary-operator)
+  - [Switch Statements:](#switch-statements)
+  - [For Loops:](#for-loops)
+  - [While Loops:](#while-loops)
+  - [Do..While](#dowhile)
+  - [Break and Continue](#break-and-continue)
+  - [For Each Loop](#for-each-loop)
+
 # 3- Control Flow
 
 ## Comparison Opeartors 
