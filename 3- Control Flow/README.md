@@ -95,3 +95,55 @@ for (int i = 0; i < 5; i++){
 > As we mentioned before in if statements, when having one instruction we have the choice to remove {}
 
 
+## While Loops:
+
+**Syntaxe:**
+
+```java
+while (condition){
+    //instructions
+}
+```
+**Example:**
+
+```java
+package org.example;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        String input = "";
+        Scanner scanner = new Scanner(System.in);
+        while(!input.equals("quit")) {
+            System.out.print("Input: ");
+            input = scanner.next().toLowerCase();
+            System.out.println(input);
+        }
+        }
+    }
+
+```
+## Do..While
+
+The difference between while loop and do..while loop, is in do..while loop the code is executed at least one time.
+
+**Syntaxe:**
+
+```java
+do{
+    //instruction
+}while(condition)
+```
+
+**Example:**
+
+```java
+//same program in while loop's example
+do {
+    System.out.print("Input: ");
+    input = scanner.next().toLowerCase();
+    System.out.println(input);
+}while(!input.equals("quit"));
+```
+
+
