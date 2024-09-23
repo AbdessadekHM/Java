@@ -24,3 +24,24 @@ comparison operators in java are same operators of other languages like javascri
 
 > for `&&`if the first expression is false it doesn't evaluate the next one, and for `||` if the first expression is true it doesn't evaluate the next one.
 > but for `&` and `|` they always evaluate both sides if they are used as logical operators
+
+## If Statements:
+
+**Syntaxe:**
+```java
+if (condition) {
+    //instructions
+}
+else if (condition) {
+    //instuctions
+}
+else{
+    //instruction
+}
+//but note that if instructions have just one line, we have the choice the not set the curley braces
+if (condition)
+    //instruction
+else 
+    //instruction
+```
+
