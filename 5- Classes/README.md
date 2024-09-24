@@ -145,7 +145,7 @@ public class Employee {
 }
 
 ```
-## Getters and Setters:
+## 8- Getters and Setters:
 
 Sometimes we have attributes that are sensitive, if their value doesn't meet some conditions, our program will crash, the solution is to make those attribues `private` and define get and set methods.
 
@@ -197,6 +197,53 @@ public class Main {
         }
     }
 
+```
+## 9- Abstraction:
+*Abstraction* means reduce complexity by hiding unnecessary details.
+
+## 10- Coupling
+`Coupling` is the level dependency between classes.
+
+## 11- Constructor:
+Constructor is a special method that get called when creating an instance.
+
+**Example:**
+Example of a constructor method of `Employee` class.
+```java
+package org.example;
+
+public class Employee {
+    private int baseSalary;
+    private int hourlyRate;
+
+    public Employee(int baseSalary, int hourlyRate) {
+        setBaseSalary(baseSalary);
+        setHourlyRate(hourlyRate);
+    }
+
+    public int calculateWage(int extraHours){
+        return baseSalary + (hourlyRate * extraHours);
+    }
+
+    private void setBaseSalary(int baseSalary) {
+        if (baseSalary < 0) {
+            throw new IllegalArgumentException("Base Salary cannot be negative");
+        }
+        this.baseSalary = baseSalary;
+    }
+    public int getBaseSalary() {
+        return baseSalary;
+    }
+    private void setHourlyRate(int hourlyRate) {
+        if (hourlyRate < 0) {
+            throw new IllegalArgumentException("Hourly Rate cannot be negative");
+        }
+        this.hourlyRate = hourlyRate;
+    }
+    public int getHourlyRate() {
+        return hourlyRate;
+    }
+}
 ```
 
 
