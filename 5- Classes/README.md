@@ -272,5 +272,13 @@ public Employee(int baseSalary, int hourlyRate) {
     setHourlyRate(hourlyRate);
 }
 ```
+## Static Members
+Class methods are divided to :
+- Static Methods: those methods are not relying on instances but on the class itself.
+- Instance Methods: those methods relying to the instance of the class
 
-
+**Syntaxe:**
+```java
+Employee.staticMethod();
+Employee.StaticVariable;
+```
