@@ -145,4 +145,60 @@ public class Employee {
 }
 
 ```
+## Getters and Setters:
+
+Sometimes we have attributes that are sensitive, if their value doesn't meet some conditions, our program will crash, the solution is to make those attribues `private` and define get and set methods.
+
+**Example:**
+`Employee.java`:
+```java
+package org.example;
+
+public class Employee {
+    private int baseSalary;
+    private int hourlyRate;
+
+    public int calculateWage(int extraHours){
+        return baseSalary + (hourlyRate * extraHours);
+    }
+
+    public void setBaseSalary(int baseSalary) {
+        if (baseSalary < 0) {
+            throw new IllegalArgumentException("Base Salary cannot be negative");
+        }
+        this.baseSalary = baseSalary;
+    }
+    public int getBaseSalary() {
+        return baseSalary;
+    }
+    public void setHourlyRate(int hourlyRate) {
+        if (hourlyRate < 0) {
+            throw new IllegalArgumentException("Hourly Rate cannot be negative");
+        }
+        this.hourlyRate = hourlyRate;
+    }
+    public int getHourlyRate() {
+        return hourlyRate;
+    }
+}
+
+```
+`Main.java`:
+```java
+package org.example;
+
+public class Main {
+    public static void main(String[] args) {
+        var employee = new Employee();
+        employee.setBaseSalary(50_000);
+        employee.setHourlyRate(20);
+        int wage = employee.calculateWage(10);
+        System.out.println(wage);
+        }
+    }
+
+```
+
+
+
 
