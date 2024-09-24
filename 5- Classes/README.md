@@ -245,7 +245,32 @@ public class Employee {
     }
 }
 ```
+## 12- Method Overloading:
+Create more than one implementation for a method with different parameters.
 
+**Example:**
+```java
+//this is inside a class
+public int calculateWate(int extraHours){
+    return baseSalary + (hourlyRate * extraHours);
+}
+public int calculateWate(){
+    return baseSalary;
+}
+```
+## 13- Constructor Overloading:
 
+```java
+public Employee(int baseSalary){
+    setBaseSalary(baseSalary);
+    //OR
+    this(baseSalary,0);
+}
+
+public Employee(int baseSalary, int hourlyRate) {
+    setBaseSalary(baseSalary);
+    setHourlyRate(hourlyRate);
+}
+```
 
 
