@@ -32,3 +32,74 @@ employee.toString() // give the full class name com.domain.className@hashedAddre
 employee.hashCode() // return the hash of the code in decimal
 employee.equal(employee1); // it compare the address code so the result of that statement is 'false'
 ```
+
+## Constructor And Inheritance:
+
+**Example:**<br>
+`UiControl.java`: <br>
+
+```java
+package org.example;
+
+public class UiControl {
+    private boolean isEnabled = true;
+
+    public UiControl(boolean isEnabled) {
+       this.isEnabled = isEnabled;
+        System.out.println("UiControl");
+    }
+    public void enable(){
+        isEnabled = true;
+    }
+    public void disable(){
+        isEnabled = false;
+    }
+    public boolean isEnabled(){
+        return isEnabled;
+    }
+}
+
+```
+
+`TextBox.java`:
+
+```java
+package org.example;
+
+public class TextBox extends UiControl {
+  public String text = "";
+
+  public TextBox(boolean isEnabled) {
+    super(isEnabled);
+    System.out.println("textBox");
+  }
+  public void setText(String text) {
+    this.text = text;
+  }
+
+  public void clear() {
+    text = "";
+  }
+}
+```
+
+`Main.java`:
+
+```java
+package org.example;
+
+public class Main {
+
+    public static void main(String[] args) {
+        var textBox = new TextBox(true);
+
+    }
+}
+```
+
+**Output:**
+
+```
+UiControl
+Textbox
+```
