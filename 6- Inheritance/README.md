@@ -103,3 +103,15 @@ public class Main {
 UiControl
 Textbox
 ```
+
+## Access Modifers:
+
+In java we have 4 type of access modifiers:
+**private**:
+it's accessible just in inside of the class
+**public**:
+it's accessible from any place in the porject
+**protected**:
+it's accessible from any class exist in same package and child classes from any package
+**default**
+when letting the field without specifying the access modifier, the `default` is that field is accessible from any class in the same package and it's not from other packages even child classes.
