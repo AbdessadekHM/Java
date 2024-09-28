@@ -115,3 +115,16 @@ it's accessible from any place in the porject
 it's accessible from any class exist in same package and child classes from any package
 **default**
 when letting the field without specifying the access modifier, the `default` is that field is accessible from any class in the same package and it's not from other packages even child classes.
+
+## Overriding Methods:
+
+to override a method we should add `@Override` anotation like the example below:
+
+**Example:**
+
+```java
+  @Override
+  public String toString(){
+    return text;
+  }
+```
