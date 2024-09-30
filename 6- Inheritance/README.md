@@ -246,3 +246,17 @@ public class CheckBox extends UiControl {
   }
 }
 ```
+
+## Abstract Classes and Methods:
+
+abstract classes are classes that have at leasat one abstract method, with abstract classes we can't create instances.
+for abstract methods, it's obligatory to override it in child classes
+
+**Syntaxe:**
+
+```java
+public abstract class UiControl{
+  public abstract render();
+
+}
+```
