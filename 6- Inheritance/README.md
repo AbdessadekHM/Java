@@ -220,3 +220,29 @@ false
 994
 994
 ```
+
+## Polymorhism:
+
+a **Polymorhism** means many forms, imagine the scenario where we have the UiControl class having two children classes TextBox and CheckBox, if we have an array of UiControl and we want to render them we should control it depending on instances, with polymorphism we skip that problem by defining the method in the parent class, and overrid it in childs classes.
+
+**Example:**
+
+```java
+public class UiControl {
+  public void render(){
+
+  }
+}
+public class TextBox extends UiControl {
+  @Override
+  public void render(){
+    System.print.out("TextBox");
+  }
+}
+public class CheckBox extends UiControl {
+  @Override
+  public void render(){
+    System.print.out("CheckBox");
+  }
+}
+```
