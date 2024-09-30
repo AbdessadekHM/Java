@@ -1,4 +1,17 @@
+- [Inheritance](#inheritance)
+  - [Definition](#definition)
+  - [The Object Class](#the-object-class)
+  - [Constructor And Inheritance:](#constructor-and-inheritance)
+  - [Access Modifers:](#access-modifers)
+  - [Overriding Methods:](#overriding-methods)
+  - [Upcasting and Downcasting:](#upcasting-and-downcasting)
+  - [Equal \&\& hashCode Overriding:](#equal--hashcode-overriding)
+  - [Polymorhism:](#polymorhism)
+  - [Abstract Classes and Methods:](#abstract-classes-and-methods)
+  - [Final Classes and Methods:](#final-classes-and-methods)
+
 # Inheritance
+
 
 ## Definition
 
