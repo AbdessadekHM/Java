@@ -128,3 +128,95 @@ to override a method we should add `@Override` anotation like the example below:
     return text;
   }
 ```
+
+## Upcasting and Downcasting:
+
+- upcasting: means to cast a child to a parent like casting textBox class to its parent UiControl, or any other class to the object class
+- downcasting: means to cast a parent to a child, like the example below:
+
+**Example:**
+
+```java
+package org.example;
+
+public class Main {
+
+    public static void main(String[] args) {
+        var control = new UiControl(true);
+        var textBox = new TextBox(true);
+        show(textBox);
+
+    }
+    public static void show(UiControl control){
+        if(control instanceof TextBox ){
+            var textBox = (TextBox) control;
+            textBox.setText("hello from overrided method");
+
+        }
+        System.out.println(control);
+    }
+}
+
+```
+
+## Equal && hashCode Overriding:
+
+`Point.java`:
+
+```java
+package org.example;
+
+import java.util.Objects;
+
+public class Point {
+    private int x;
+    private int y;
+
+    Point(int x, int y){
+        this.x = x;
+        this.y = y;
+    }
+
+    @Override
+    public boolean equals(Object obj){
+        if(this == obj) return true;
+        if(!(obj instanceof Point)) return false;
+        var other = (Point) obj;
+        return x == other.x && y == other.y;
+
+    }
+    @Override
+    public int hashCode(){
+        return Objects.hash(x, y);
+    }
+}
+```
+
+`Main.java`:
+
+```java
+package org.example;
+
+public class Main {
+
+    public static void main(String[] args) {
+        var point1 = new Point(1, 2);
+        var point2 = new Point(1, 2);
+
+        System.out.println(point1.equals(point2));
+        System.out.println(point1==point2); // how??
+        System.out.println(point1.hashCode());
+        System.out.println(point2.hashCode());
+    }
+}
+
+```
+
+**Output**:
+
+```
+true
+false
+994
+994
+```
