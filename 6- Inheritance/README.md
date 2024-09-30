@@ -260,3 +260,17 @@ public abstract class UiControl{
 
 }
 ```
+
+## Final Classes and Methods:
+
+final classes are classes that can't be inherited, and final methods are methods that we can't override.
+
+**Syntaxe:**
+
+```java
+public final class UiControl{
+  public final render(){
+    //Instructions
+  }
+}
+```
