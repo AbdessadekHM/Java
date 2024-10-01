@@ -67,3 +67,120 @@ public class TaxReport {
 
 }
 ```
+
+## Dependency Injection:
+
+<!-- this definitions is copied from digital ocean -->
+**`Java Dependency`** Injection design pattern allows us to remove the hard-coded dependencies and make our application loosely coupled, extendable and maintainable. We can implement dependency injection in java to move the dependency resolution from compile-time to runtime. 
+
+we will see 3 approaches of injection using same example of taxes from last sectoin.
+
+### Constructor Injection 
+`TaxReport`:
+
+```java
+package org.example;
+
+public class TaxReport {
+    private TaxCalculator calculator;
+
+    public TaxReport(TaxCalculator calculator) {
+        this.calculator = calculator;
+    }
+    public void show(){
+        var tax = calculator.calculateTax();
+        System.out.println(tax);
+    }
+
+}
+```
+
+`Main`:
+
+```java
+package org.example;
+
+public class Main {
+
+    public static void main(String[] args) {
+        var taxCalculator = new TaxCalculator2018(100_000);
+        var taxReport = new TaxReport(taxCalculator);
+        taxReport.show();
+    }
+}
+```
+The Inconvenient of this approach, is when we have a lot of classes, it's applicable to create many instances in the main function.
+
+### Setter Injection
+it allows us to change the class dependency in the runtime.
+
+In this example we add new class `TaxCalculator2019` and a set method inside the `TaxReport` class.
+
+`TaxCalculator2019`:
+
+```java
+package org.example;
+
+public class TaxCalculator2019 implements TaxCalculator {
+    private double amount;
+
+    public  TaxCalculator2019(double amount) {
+       this.amount = amount;
+    }
+   public double calculateTax() {
+       return 0;
+   }
+}
+```
+
+`TaxReport`:
+
+```java
+//same as this previous example 
+public void setCalculator(TaxCalculator calculator){
+    this.calculator = calculator;
+}
+```
+
+`Main`:
+```java
+//same as the previous example
+report.setCalculator(new TaxCalculator2019(50_000));
+report.show();
+```
+
+### Method Injection:
+In this approach we passe the dependency directly to methods.
+
+`TaxReport`:
+
+```java
+package org.example;
+
+public class TaxReport {
+
+    public void show(TaxCalculator calculator){
+        var tax = calculator.calculateTax();
+        System.out.println(tax);
+    }
+
+}
+```
+
+`Main`:
+
+```java
+package org.example;
+
+public class Main {
+
+    public static void main(String[] args) {
+        var taxCalculator = new TaxCalculator2018(100_000);
+        var taxReport = new TaxReport();
+        taxReport.show(taxCalculator);
+        taxReport.show(new TaxCalculator2019(50_000));
+    }
+}
+```
+> the most used approach is constructor injection.
+----------
