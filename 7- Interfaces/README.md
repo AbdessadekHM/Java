@@ -1,3 +1,16 @@
+- [Interface:](#interface)
+  - [What are Interfaces:](#what-are-interfaces)
+  - [Create an Interface:](#create-an-interface)
+  - [Dependency Injection:](#dependency-injection)
+    - [Constructor Injection](#constructor-injection)
+    - [Setter Injection](#setter-injection)
+    - [Method Injection:](#method-injection)
+  - [Interface Segragation Principle:](#interface-segragation-principle)
+  - [Fields:](#fields)
+  - [Static Methods Inside Intefaces:](#static-methods-inside-intefaces)
+  - [Private Methods Inside Interfaces:](#private-methods-inside-interfaces)
+  - [Interfaces vs Abstract Classes:](#interfaces-vs-abstract-classes)
+
 # Interface: 
 
 ## What are Interfaces: 
@@ -184,3 +197,81 @@ public class Main {
 ```
 > the most used approach is constructor injection.
 ----------
+
+## Interface Segragation Principle:
+Divide big interfaces into smallers ones. 
+
+**Example:**
+
+instead of grouping all methods signatures in one place like this:
+
+```java
+public interface UIWidget {
+    void drag();
+    void resize();
+    void render();
+}
+```
+
+we can use this: 
+
+```java
+//Draggable.java
+public interface Draggable{
+    void drag();
+
+}
+//Resizable.java
+public interface Resizable{
+    void resize();
+}
+
+// UIWidget.java
+
+public interface UiWidget extends Draggable, Resizable {
+    void render();
+}
+
+```
+
+## Fields:
+we can create fields in an interface 
+
+> Instrcutro said about this point, that's bad practice.
+```java
+public interface TaxCalculator{
+    float minimumTax = 100;
+}
+// minimumTax is a constant it can't be changed.
+```
+## Static Methods Inside Intefaces:
+we can add static methods inside interfaces.
+
+> Instrcutro said about this point, that's bad practice.
+
+```java
+public interface TaxCalculator{
+    static float calculateTax(float income, float taxPercentage){
+        return income*taxPercentage;
+    }
+}
+//the instructor prefer to do an abstract class and declare this static method there, to leave interface as pure as possible, he said interface is what and classes are how
+```
+
+## Private Methods Inside Interfaces:
+we can add parivate methods inside interfaces, and again it's bad practice.
+
+```java
+public interface TaxCalculator{
+    private void print(){
+        system.out.print("hello world")
+    }
+}
+```
+## Interfaces vs Abstract Classes:
+
+**Interfaces**: To build loosely-coupled, extensible, testable applications.
+**Abstract Classes**: To share code. 
+
+
+
