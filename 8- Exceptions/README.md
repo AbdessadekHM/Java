@@ -46,10 +46,58 @@ public class ExceptionsDemo {
     try{
         //INSTRUCTION
     }
+    /*
+        The difference between the two implementation, is in the first reader object is gonna automatically closed after finishing the block.
+        where the second we should close reader manually, by creating a null object, and affect it inside try, closing it using finally clausure 
+    */
 
 }
 ```
 
+## Catching Multiple Exceptions: 
+
+```java
+package com.app.exceptions;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+public class ExceptionsDemo {
+
+    public static void show(String message) {
+        try (var reader = new FileReader("text.txt")) {
+            new SimpleDateFormat().parse(null);
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+        System.out.println("out of block");
+
+    }
+
+} 
+// or
+        try (var reader = new FileReader("text.txt")) {
+            new SimpleDateFormat().parse(null);
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+
+        } catch (ParseException | IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("out of block");
+    
+```
 
 
 
