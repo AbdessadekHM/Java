@@ -198,6 +198,50 @@ public class Account {
     }
 ```
 
+## Re-Throwing Exceptions:
+Sometimes we throw an exception inside a method of a class and handle it there, but the application in the main keep functioning, which may cause a problem.
+Example:
+```java
+//ExceptionsDemo.java
+package com.app.exceptions;
+
+import java.io.IOException;
+
+public class ExceptionsDemo {
+
+    public static void show(String message) throws IOException {
+        var account = new Account();
+
+        try {
+            account.deposite(-1);
+        } catch (IOException e) {
+            System.out.println("Logging");
+            throw e; //here we re-throw the exception to handle in the top next class
+        }
+
+    }
+}
+```
+```java
+//main.java
+package com.app;
+
+import java.io.IOException;
+
+import com.app.exceptions.ExceptionsDemo;
+
+public class Main {
+    public static void main(String[] args) {
+        try {
+            ExceptionsDemo.show(null);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+}
+```
+
 
 
     
