@@ -1,4 +1,18 @@
+- [Exceptions](#exceptions)
+  - [What Are Exceptions:](#what-are-exceptions)
+  - [Types of Exceptions:](#types-of-exceptions)
+  - [Exceptions Hierarchy:](#exceptions-hierarchy)
+  - [Catching Exceptions:](#catching-exceptions)
+  - [Catching Multiple Exceptions:](#catching-multiple-exceptions)
+  - [The Finally Block:](#the-finally-block)
+  - [The Try-With-Resources-Statements:](#the-try-with-resources-statements)
+  - [Throwing Exceptions:](#throwing-exceptions)
+  - [Re-Throwing Exceptions:](#re-throwing-exceptions)
+  - [Custom Exceptions:](#custom-exceptions)
+  - [Chaining Exceptions](#chaining-exceptions)
+
 # Exceptions
+
 
 ## What Are Exceptions:
 Exception is an event, which occurs during the execution of a program, that disrupts the normal flow of the program's instructions.
@@ -242,7 +256,48 @@ public class Main {
 }
 ```
 
+## Custom Exceptions:
+We can create our custom exceptions following this syntaxe 
+```java
 
+public class NameException extends Exception {
+    public NameException(){
+        super("message");
+
+    }
+
+    public NameException(String message){
+        super(message);
+
+    }
+}
+// in this example we've created a checked exception to create an unchecked exception we should extend RunTimeException
+```
+
+## Chaining Exceptions
+An Exception cause another exception.
+
+**Syntaxe**:
+```java
+var wrapperException = new WrapperException();
+var childException = new ChildException();
+wrapperException.initCause(childException);
+throw wrapperException();
+
+// or 
+// add to construction of WrapperException
+
+public class WrapperException extends Exception {
+    public WrapperException(Exception cause){
+        super(cause);
+
+    }
+}
+
+// then
+throw new WrapperException(new ChildException());
+//in catch method we can access the cause exception(child) by using getCause method.
+```
 
     
 
