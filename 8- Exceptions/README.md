@@ -21,6 +21,36 @@ Exception is an event, which occurs during the execution of a program, that disr
 
 ![image_3](../assets/3.png)
 
+## Catching Exceptions:
+
+**Syntaxe:**
+```java
+package com.app.exceptions;
+
+import java.io.FileReader;
+import java.io.IOException;
+
+public class ExceptionsDemo {
+
+    public static void show(String message) {
+        try (var reader = new FileReader("file.txt")) {
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+
+        System.out.println("out of block");
+
+    }
+    //or we can use for try instead of try(instruction)
+    try{
+        //INSTRUCTION
+    }
+
+}
+```
+
+
 
 
 
