@@ -128,6 +128,29 @@ finally block is a block that's gonna run in both case try and catch.
 
     }
 ```
+## The Try-With-Resources-Statements:
+
+instead of using finally block we can use try-with-ressources-statements, it can be done just for class that implement Closable interface.
+
+```java
+    public static void show(String message) {
+        try(
+            var reader = new FileReader("text.txt");
+            var writer = new FileWriter("text.txt");
+        ) {
+            
+            new SimpleDateFormat().parse(null);
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+
+        } catch (ParseException | IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("out of block");
+
+    }
+```
 
 
 
