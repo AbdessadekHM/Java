@@ -99,6 +99,35 @@ public class ExceptionsDemo {
     
 ```
 
+## The Finally Block: 
+finally block is a block that's gonna run in both case try and catch.
+
+```java
+    public static void show(String message) {
+        FileReader reader = null;
+        try {
+            reader = new FileReader("text.txt");
+            new SimpleDateFormat().parse(null);
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+
+        } catch (ParseException | IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        }
+        System.out.println("out of block");
+
+    }
+```
 
 
 
