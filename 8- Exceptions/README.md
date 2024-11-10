@@ -151,7 +151,52 @@ instead of using finally block we can use try-with-ressources-statements, it can
 
     }
 ```
+## Throwing Exceptions:
 
+defensive programming: is a technique used in software development to identify and handle problem situations in order to prevent software failures.
+
+**Syntaxe**(Unchecked Exception):
+```java
+//Account.java
+package com.app.exceptions;
+
+public class Account {
+    public static void deposite(float value) {
+        if (value < 0)
+            throw new IllegalArgumentException();
+    }
+
+}
+
+//Main
+account.deposite(-1) // this is gonna throw an error
+//as illegar arugment exception is a runtime exception we don't need to handle 
+```
+**Syntaxe**(checked Exception):
+```java
+//Account.java
+package com.app.exceptions;
+
+import java.io.IOException;
+
+public class Account {
+    public void deposite(float value) throws IOException {
+        if (value < 0)
+            throw new IOException();
+    }
+
+}
+//Main.java
+        var account = new Account();
+
+        try {
+            account.deposite(-1);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+```
 
 
 
