@@ -17,6 +17,10 @@ Exception is an event, which occurs during the execution of a program, that disr
         - IllegalStateException
 - **Errors**: are exceptions related to ressources or jvm itself, we can't not handle it at all, like `StackOverFlow`.
   
+## Exceptions Hierarchy:
+
+![image_3](../assets/3.png)
+
 
 
 
