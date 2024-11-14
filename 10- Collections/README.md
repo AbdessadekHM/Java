@@ -1,6 +1,6 @@
 
 
-# Colllections
+# Collections
 
 
 ## Overview: 
@@ -114,4 +114,76 @@ public class Main {
     }
 }
 ```
+## The Collections Interface:
+
+> Collections doesn't support indexing.
+**Example**:
+
+```java
+package com.app.collections;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+
+public class CollectionsDemo {
+    
+    public static void show(){
+        Collection<String> collections = new ArrayList<>();
+        //collections.add("a");
+        Collections.addAll(collections, "a","b","c","d"); 
+        collections.remove("a");
+        System.out.println(collections.contains("a"));
+        collections.clear();
+        System.out.println(collections.isEmpty());
+
+        // convert to Array
+
+        Object objects = collections.toArray();
+        String[] strings = collections.toArray(new String[0]);
+
+        // clone 
+
+        Collection<String> other = new ArrayList<>();
+        other.addAll(collections);
+
+        System.out.println(other == collections);
+        System.out.println(other.equals(collections));
+
+
+    }
+
+}
+```
+
+
+## The List Interface:
+
+List interface extends the Collection interface. 
+
+**Example**:
+```java
+package com.app.collections;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class ListDemo {
+    public static void show(){
+        List<String> list = new ArrayList<>();
+        Collections.addAll(list, "a","b","c","d","a");
+        // we still use all collections's methods
+        list.add(0,"!");            //insert in index 0
+        list.set(0,"?");            //update in index 0
+        list.remove(0);             //remove index 0
+        list.indexOf("a");          //return the index of the first a found in the list
+        list.lastIndexOf("a");      //return the last a in the list
+        list.subList(0, 2);         //[a,b,c,d,a] => [a,b], it return a totally new object
+    }    
+}
+```
+
+
+
 
