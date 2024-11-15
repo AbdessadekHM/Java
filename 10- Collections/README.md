@@ -321,6 +321,39 @@ set1.retainAll(set2);
 set1.removeAll(set2);
 ```
 
+## The Map Interface:
+
+Map is an interface exist in java.utils, it's not part of the hiararchy of the overview section, it doesn't extends any of those previous interfaces, and many class implement it.
+### HashSet:
+HashSet is a class that implement Map.
+**Syntaxe**:
+```java
+Map<K,V> map = new HashSet();
+```
+**Methods**:
+```java
+Map<String,Customer> map = new HashSet();
+// add element 
+map.put(key,value);
+// get an element by key
+var value = map.get(key);
+// set a default in case a key doesn't exist
+var value = map.getOrDefault(key, CustomerObject);
+// check the exsitence of a key
+var isExist = map.containsKey(key);
+// replace a value of a key
+map.replace(key, newValue);
+
+```
+
+> Note that the HashMap is not itrable, but we still loop over it using next methods:
+
+```java
+map.KeySet() // return a List of keys
+map.values // return a List of values
+map.entrySet() // return an entry, we can get both key and value by using getKey & getValue methods
+// Note that using any of those methods doesn't guaranty the order
+```
 
 
 
