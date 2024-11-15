@@ -184,6 +184,43 @@ public class ListDemo {
 }
 ```
 
+## The Comparable Interface:
+
+**Exampe**:
+```java
+package com.app.collections;
+
+
+    public class Customer implements Comparable<Customer> {
+        private String name;
+
+    public Customer(String name){
+        this.name = name;
+    }
+
+    @Override
+    public int compareTo(Customer other) {
+        return name.compareTo(other.name);
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    } 
+
+    
+}
+//main.java
+List<Customer> customers = new ArrayList<>();
+customers.add(new Customer("b"));
+customers.add(new Customer("c"));
+customers.add(new Customer("a"));
+
+System.out.println(customers);  // [b,c,a]
+Collections.sort(customers);    
+System.out.println(customers);  // [a,b,c]
+```
+
 
 
 
