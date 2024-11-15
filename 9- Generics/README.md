@@ -50,6 +50,7 @@ public class ClassName<T extends Number>{
 // or it can extract also interface or multiple interfaces using & operator
 public class ClassName<T extends Comparable & Cloneable>{
     //...
+// there is also super constraint, <T super Number>, search for it 
 }
 ```
 
