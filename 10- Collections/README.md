@@ -280,5 +280,47 @@ public class QueueDemo {
 }
 ```
 
+## The Set Interface:
+- Set is a data structure in java, it implements `Collection`, and has many implementation like `HashSet`..., you can discover more by checking `oracle` documentation.
+
+**Example**:
+```java
+import java.utils.Set;
+import java.utisl.HashSet;
+Set<String> name = new HashSet();
+```
+Set is different from other data structure like queue and List:
+    - Set doesn't support indexing
+    - Set doesnt' support order like list does.
+    - Set have uniques elements.
+  
+### HashSet 
+- HashSet is a class that implements Set.
+
+**Constructors**:
+```java
+// default constructor
+Set<String> name = new HashSet();
+Collections<String> collections = new ArrayList(Arrays.asList("a", "b", "c", "a"));
+// take Collection<? extends String>
+Set<String> name = new HashSet(collections);
+```
+**Methods**:
+```java
+Set<String> set1 = new HashSet();
+Set<String> set2 = new HashSet();
+// Add an element set1.add(E e)
+set1.add("element"); 
+// Remove an element set2.remove(E e).
+set2.remove("element"); 
+// Union
+set1.addAll(set2);
+// Intersectoin
+set1.retainAll(set2);
+// Difference 
+set1.removeAll(set2);
+```
+
+
 
 
