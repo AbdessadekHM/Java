@@ -221,6 +221,34 @@ Collections.sort(customers);
 System.out.println(customers);  // [a,b,c]
 ```
 
+## The Comparator Interface: 
+instead of using a static comparator like the previous section, we can create a dynamic comparator, which allow us change the compare element of the class any time.
+
+
+```java
+//Customer.java as previous example
+package com.app.collections;
+
+import java.util.Comparator;
+
+public class EmailComparator implements Comparator<Customer> {
+
+    @Override
+    public int compare(Customer o1, Customer o2) {
+        return o1.getEmail().compareTo(o2.getEmail());
+    }
+}
+//main.java
+List<Customer> customers = new ArrayList<>();
+customers.add(new Customer("b","e3" ));
+customers.add(new Customer("c","e2"));
+customers.add(new Customer("a", "e1"));
+
+System.out.println(customers);  // [b,c,a]
+Collections.sort(customers,new EmailComparator());
+System.out.println(customers);  // [a,c,b]
+```
+
 
 
 
