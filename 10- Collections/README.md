@@ -249,6 +249,36 @@ Collections.sort(customers,new EmailComparator());
 System.out.println(customers);  // [a,c,b]
 ```
 
+## The Queue Interface:
+
+queue is a data structure, check the documentation.
+
+**Example**:
+```java
+package com.app.collections;
+
+import java.util.ArrayDeque;
+import java.util.Queue;
+
+public class QueueDemo {
+
+    public static void show(){
+        Queue<String> queue = new ArrayDeque<>();
+        queue.add("a");
+        queue.add("b");
+        queue.add("c");
+        queue.offer("d");//the difference between add and offer is offer return false if the queue is full where add throw an exception
+        
+        var front = queue.peek();
+        var front1 = queue.element(); // the difference between those two is peek throw an exception if the queue is empty where the element return false
+
+        var removedFront = queue.remove();
+        var removedFront1 = queue.poll();//the difference is poll return false when the queue is empty where remove throw an exception
+
+    }
+    
+}
+```
 
 
 
