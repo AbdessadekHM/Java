@@ -29,7 +29,6 @@ greet(new Printer(){
 ```
 
 ## Lambda Expression:
-`Lambda Expression` allow us to declare a function(anonymous function).
 
 **Example**:
 ```java
@@ -48,4 +47,58 @@ greet(printer);
 
 When using Lambda function, we still access to variable inside the method we use the expression in, or even class fields.
 
+## Method References:
+
+When having functional interface, and we are using a method that take it as argument, like in the example below, we can pass just a reference for the method
+
+**Syntaxe**:
+```java
+method(Object::Method);
+```
+
+**Example**:
+```java
+package com.app.lambdas;
+
+public class LambdasDemo {
+
+    public LambdasDemo(){
+
+    }
+
+    public LambdasDemo(String message){
+        System.out.println(message);
+    }
+
+    public static void print(String message){
+        System.out.println(message);
+
+    }
+    public void nonStaticPrint(String message){
+        System.out.println(message);
+    }
+
+    public static void show(){
+        //var consolePrinter = new ConsolePrinter();
+        var labmda = new LambdasDemo();
+        greet(System.out::println);
+        greet(LambdasDemo::print);
+        greet(labmda::nonStaticPrint);
+        greet(LambdasDemo::new);
+
+    }
+    public static void greet(Printer printer){
+        printer.print("hello world");
+
+    }
+
+
+    
+}
+```
+## Functional Built-In:
+
+<div style="display:flex;justify-content:center;align-item:center">
+<img src="../assets/5.png" width=700 />
+</div>
 
