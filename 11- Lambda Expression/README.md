@@ -1,5 +1,19 @@
 # Lambda Expressoin:
+- [Lambda Expressoin:](#lambda-expressoin)
+  - [Functional Interfaces:](#functional-interfaces)
+  - [Anonymous Classes:](#anonymous-classes)
+  - [Lambda Expression:](#lambda-expression)
+  - [Variable Capture:](#variable-capture)
+  - [Method References:](#method-references)
+  - [Functional Built-In:](#functional-built-in)
+  - [Consumer Interface:](#consumer-interface)
+  - [Supplier Interface:](#supplier-interface)
+  - [Function Interface](#function-interface)
+  - [Predicate Interface:](#predicate-interface)
+  - [Binary Operator:](#binary-operator)
+  - [Unary Operator:](#unary-operator)
 
+`packageName: java.utils.function`
 ## Functional Interfaces:
 
 `Functional Interfaces`: are interfaces that have a single abstract method(doesn't have an implementation in the Interface).
@@ -241,3 +255,96 @@ System.out.println(firstResult); // {"key=value"}
 System.out.println(secondResult); // {"key=value"}
 
 ```
+## Predicate Interface:
+It takes an argument and return boolean value.
+
+**Declaration**:
+```java
+// Source code is decompiled from a .class file using FernFlower decompiler.
+package java.util.function;
+
+import java.util.Objects;
+
+@FunctionalInterface
+public interface Predicate<T> {
+   boolean test(T var1);
+
+   default Predicate<T> and(Predicate<? super T> other) {
+      Objects.requireNonNull(other);
+      return (t) -> {
+         return this.test(t) && other.test(t);
+      };
+   }
+
+   default Predicate<T> negate() {
+      return (t) -> {
+         return !this.test(t);
+      };
+   }
+
+   default Predicate<T> or(Predicate<? super T> other) {
+      Objects.requireNonNull(other);
+      return (t) -> {
+         return this.test(t) || other.test(t);
+      };
+   }
+
+   static <T> Predicate<T> isEqual(Object targetRef) {
+      return null == targetRef ? Objects::isNull : (object) -> {
+         return targetRef.equals(object);
+      };
+   }
+
+   static <T> Predicate<T> not(Predicate<? super T> target) {
+      Objects.requireNonNull(target);
+      return target.negate();
+   }
+}
+
+```
+> it has one abstract method `test`.
+
+<br>
+
+**Example**:
+```java
+package com.app.lambdas;
+
+import java.util.function.Predicate;
+
+public class LambdasDemo {
+    public LambdasDemo(){
+
+    }
+    public static void show(){
+
+        Predicate<String> isLongerthan5 = str -> str.length() > 5;
+
+        boolean result = isLongerthan5.test("sky");
+        System.out.println(result); //false
+    }
+}
+```
+
+**Combining Predicates"**:
+```java
+Predicate<String> hasLeftBrace = str -> str.startsWith("{");
+Predicate<String> hasRightBrace = str -> str.endsWith("}");
+
+boolean resultAnd = hasLeftBrace.and(hasRightBrace).test("{hello}");
+boolean resultOr = hasLeftBrace.or(hasRightBrace).test("{hello}");
+boolean resultInverse = hasLeftBrace.and(hasRightBrace).negate().test("{hello}");
+ 
+
+System.out.println(resultAnd);
+System.out.println(resultOr);
+System.out.println(resultInverse);
+```
+
+## Binary Operator:
+Takes two argument return one value.
+check docs
+
+## Unary Operator:
+Takes one arg return one value
+check docs
