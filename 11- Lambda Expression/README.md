@@ -102,3 +102,142 @@ public class LambdasDemo {
 <img src="../assets/5.png" width=700 />
 </div>
 
+- Consumer : take inputs, no outputs
+- Supplier : no inputs, give outputs
+- Function : map inputs to outputs
+- Predictable : takes inputs, return boolean
+
+## Consumer Interface:
+
+Consumer interface has two mains methods, `addThen` for chaining, `accept` method, you can check the documentation for more information
+
+**Methods**:
+```java
+// Source code is decompiled from a .class file using FernFlower decompiler.
+package java.util.function;
+
+import java.util.Objects;
+
+@FunctionalInterface
+public interface Consumer<T> {
+   void accept(T var1);
+
+   default Consumer<T> andThen(Consumer<? super T> after) {
+      Objects.requireNonNull(after);
+      return (t) -> {
+         this.accept(t);
+         after.accept(t);
+      };
+   }
+}
+```
+
+some methods takes this interface as an argument, which allow us to code in a declarative way, rather than imperative.
+
+**Example**:
+```java
+List<Integer> numbers = List.of(1,3,5,6);
+// Imperative programming
+for(var item : numbers){
+    System.out.print(item);
+}
+// Declarative programming
+numbers.forEach(item -> System.out.print(item));
+```
+
+related interfaces: BiConsumer, IntConsumer.
+
+
+**Chaining Consumer**:
+
+**Example**:
+```java
+List<String> alphas = List.of("a", "b", "c", "d", "e");
+
+Consumer<String> print = item -> System.out.print(item);
+// originally it's 
+// Consumer<String> print = (String item) -> System.out.print(item);
+Consumer<String> printUpperCase = item -> System.out.print(item.toUpperCase());
+alphas.forEach(print.andThen(printUpperCase));
+```
+## Supplier Interface:
+Takes nothing, and does return a value.
+
+```java
+// Source code is decompiled from a .class file using FernFlower decompiler.
+package java.util.function;
+
+@FunctionalInterface
+public interface Supplier<T> {
+   T get();
+}
+
+```
+
+**Example**:
+```java
+Supplier<Double> getRandom = () -> {return Math.random();};
+//               getRandom = () -> Math.random();
+System.out.println(getRandom.get());
+``` 
+we can use DoubleSupplier to handle double values without having the cost of autoboxing, we can do the same with all primitive values(BooleanSupplier....).
+
+## Function Interface 
+it takes an argument and return a value
+
+```java
+// Source code is decompiled from a .class file using FernFlower decompiler.
+package java.util.function;
+
+import java.util.Objects;
+
+@FunctionalInterface
+public interface Function<T, R> {
+   R apply(T var1);
+
+   default <V> Function<V, R> compose(Function<? super V, ? extends T> before) {
+      Objects.requireNonNull(before);
+      return (v) -> {
+         return this.apply(before.apply(v));
+      };
+   }
+
+   default <V> Function<T, V> andThen(Function<? super R, ? extends V> after) {
+      Objects.requireNonNull(after);
+      return (t) -> {
+         return after.apply(this.apply(t));
+      };
+   }
+
+   static <T> Function<T, T> identity() {
+      return (t) -> {
+         return t;
+      };
+   }
+}
+```
+
+**Example**
+```java
+Function<String,Integer> map = str -> str.length();
+String word = "word";
+int length = map.apply(word);
+System.out.println(length);
+```
+Related interfaces: IntFunction, DoubleFunction, IntToLongFunction (check the documentation for more informations)
+
+**Composing Functions**:
+
+```java
+
+//tr "key:value" -> {"key=value"}
+Function<String, String> replaceColonn = str -> str.replace(":","=");
+Function<String, String> addBraces = str -> "{" + str + "}";
+
+String firstResult = replaceColonn.andThen(addBraces).apply("key:value");
+String secondResult = addBraces.compose(replaceColonn).apply("key:value");
+
+System.out.println(firstResult); // {"key=value"}
+System.out.println(secondResult); // {"key=value"}
+
+```
